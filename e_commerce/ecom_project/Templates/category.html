@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+    {% if category %}
+        {{ category.desc|truncatewords:155 }}
+    {% else %}
+        Pentagon Store BUY.THINK.GROW
+    {% endif %}
+{% endblock %}
+{% block title %}
+    {% if category %}
+        {{ category.name }} ---> Pentagon Store
+    {% else %}
+        Pentagon pvt lmt
+    {% endif %}
+{% endblock %}
+{% block body %}
+    {% if category %}
+        <div  class="row my_row">
+            <div class="mx-auto">
+                <p><a href="{% url 'ecom_app:allprocat' %}">Our product collections </a>| {{category.name}}</p>
+            </div>
+        </div>
+    {% endif %}
+    {% if category %}
+        <div class="mx_auto">
+        <div>
+            <img class="my_image" src="{{category.image.url}}" alt="{{category.name}}">
+        </div><br>
+        <div>
+            <h1 class="text-center my_title">{{category.name}}</h1><br>
+            <p class="text-justify">{{category.desc}}</p>
+        </div>
+        </div>
+    {% else %}
+        <div><center>
+            <img class="my_image image_padding" src="{% static 'img/banner.png' %}" alt="banner.jpg" width="1300px"; height="500px;"></center>
+        </div>
+        <div>
+        <div>
+            <h1 class="text-center my_title">Our Products</h1>
+            <p class="text-justify">Welcome to our premier online shopping destination! At our e-commerce website, we offer an extensive
+                selection of top-quality products that cater to your every need. Whether you're looking for the latest
+                fashion trends, cutting-edge electronics, or unique home decor, we've got you covered. Our user-friendly
+                interface ensures a seamless shopping experience, with easy navigation and secure payment options.
+                Explore our curated collections, take advantage of exclusive discounts, and enjoy fast and reliable
+                shipping to your doorstep. Join our community of satisfied customers who trust us to provide exceptional
+                products and exceptional service. Shop with us today and elevate your online shopping experience to a whole
+                new level.</p>
+        </div>
+        </div>
+    {% endif %}
+<div class="container">
+    <div class="row mx_auto">
+        {% for products in product %}
+        <div class="my_bottom_margin col-sm-12 col-md-4">
+            <div class="card text-center" style="min_width:18rem;">
+            <a href="{{products.get_url}}"><img class="card-img-top my_image"src="{{products.image.url}}" width="300px;" height="250px;"></a>
+            </div>
+            <div class="card-body">
+            <h4>{{products.name}}</h4>
+            <p>{{products.price}}/-</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+        <div class="mx-auto">
+            {% if product.paginator.num_pages > 1 %}
+                <hr>
+                <div class="text-center">
+                    {% for pr in product.paginator.page_range %}
+                        <a href="?page={{pr}}" class="btn btn-light btn-sm {% if product.number == pr %} active {% endif %}">{{pr}}</a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+        <br>
+</div>
+{% endblock %}

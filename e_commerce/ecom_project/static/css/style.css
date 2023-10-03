@@ -1,0 +1,99 @@
+/***Nav-Bar***/
+.nav-item{
+    letter-spacing:.2em;
+    font-size:14px;
+    text-transform:uppercase;
+}
+.dropdown-item{
+    letter-spacing:.2em;
+    font-size:14px;
+}
+/***Body***/
+body{
+    font-family: 'Dosis', sans-serif;
+}
+/***Footer***/
+.my_footer{
+    background-color:#CCD1D1;
+    height:40px;
+}
+.my_footer p{
+    padding-top:10px;
+    font-size:14px
+}
+/***Category***/
+.my_row{
+    padding-top:20px;
+}
+.my_row .mx-auto{
+    color:#000;
+    font-size:12px;
+}
+.my_image{
+    width:100%;
+    height:auto;
+}
+.my_title{
+    text-transform:uppercase;
+    font-size:16px;
+    letter-spacing:.2em;
+}
+.image_padding{
+    padding:5px;
+}
+.my_bottom_margin{
+    margin_bottom:10px;
+}
+.card-body h4{
+    text-transform:uppercase;
+    letter-spacing:.2em;
+}
+/***Product***/
+.my_prod{
+    padding-top:15px;
+    padding-bottom:20px;
+}
+.my_prod .mx-auto{
+    color:#000;
+    font-size:12px;
+    text_decoration:none;
+}
+.pro_title{
+    font-size:16px;
+    text-transform:uppercase;
+    letter-spacing:.2em;
+    padding-top:15px;
+    padding-bottom:10px;
+}
+.pro_desc{
+    padding-right:20px;
+}
+/***Search***/
+.my_search_text{
+    padding_top:20px;
+}
+/***Cart***/
+.my_table{
+    min-width:400px;
+    font_size:14px;
+}
+.my_thead{
+    font-weight:normal;
+    text_transform:uppercase;
+    letter-spacing:.2em;
+    background-color:#f8f8fa!important;
+}
+.custom_a{
+    text_decoration:none;
+}
+.custom_icon{
+    text_decoration:none;
+    color:#868e96 !important;
+}
+.my_button{
+    margin-top:5px;
+}
+.custom_img{
+    width:250px;
+    height:200px;
+}
